@@ -68,11 +68,11 @@ server
 
 * **`app.js`** - This is the main application file for our server.
 
-* **`api/**/*`** - The API folder contains the logic for each endpoint
+* **`api/`** - The API folder contains the logic for each endpoint
   of this application. For example, the files stored in the folder
   `server/api/users` contain logic relating to the `/api/users` endpoint.
   For more information about the Model-View-Controller pattern,
-  [click here (Wikipedia on MVC)](wiki-mvc).
+  [click here (Wikipedia on MVC)][wiki-mvc].
 
   [wiki-mvc]: https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller
 
@@ -127,8 +127,8 @@ take a look!
 ### Communication
 
 We manage our issues/planning through GitHub Issues. To come to one of
-the group meetings, check out our [Meetup schedule](novamean).
-To join the conversation, join our team [Slack channel](novamean-slack).
+the group meetings, check out our [Meetup schedule][novamean].
+To join the conversation, join our team [Slack channel][novamean-slack].
 
 [novamean]:       http://www.meetup.com/NOVA-MEAN/
 [novamean-slack]: http://novamean-slack.herokuapp.com/
