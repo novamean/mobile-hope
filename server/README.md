@@ -1,6 +1,7 @@
 Mobile Hope Express Server
 ==========================
-[[Join us on Slack!](http://novamean-slack.herokuapp.com/)]
+[![Slack Badge](http://novamean-slack.herokuapp.com/badge.svg)][slack]
+[slack]: http://novamean-slack.herokuapp.com
 
 This directory contains the backend express app for Mobile Hope.
 
