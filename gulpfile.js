@@ -6,10 +6,22 @@ var sass = require('gulp-sass');
 var minifyCss = require('gulp-minify-css');
 var rename = require('gulp-rename');
 var sh = require('shelljs');
+var protractor = require("gulp-protractor").protractor;
+var webdriverStandalone = require("gulp-protractor").webdriver_standalone;
 
 var paths = {
   sass: ['./scss/**/*.scss']
 };
+
+// run end-to-end tests
+gulp.task('protractor', function (done) {
+    gulp.src('./e2e/**/*.spec.js')
+        .pipe(protractor({
+            configFile: 'protractor.conf.js',
+        }))
+        .on('error', function (e) { throw e; })
+        .on('end', done);
+});
 
 gulp.task('default', ['sass']);
 
