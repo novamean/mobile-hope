@@ -5,7 +5,7 @@
 // 'starter.controllers' is found in controllers.js
 angular.module('mobilehope', ['ionic', 'mobilehope.controllers'])
 
-.run(function($ionicPlatform) {
+    .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
     // for form inputs)
@@ -66,7 +66,15 @@ angular.module('mobilehope', ['ionic', 'mobilehope.controllers'])
         controller: 'CategoryCtrl'
       }
     }
-  });
+        //,
+        //resolve: {
+        //  logSomeParams: ['$stateParams', '$state', function ($stateParams, $state) {
+        //    console.log($stateParams);
+        //    console.log(this); // this is the state you transitioned From.
+        //    console.log($state); // this is the state you transitioned To.
+        //  }]
+        //}
+      });
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/app/inventory');
+  $urlRouterProvider.otherwise('app/search');
 });

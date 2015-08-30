@@ -1,21 +1,10 @@
-<!--<ion-view view-title="Inventory">-->
-  <!--<ion-content>-->
-    <!--<ion-list>-->
-      <!--<ion-item ng-repeat="category in categories" href="#/app/category/{{category.id}}">-->
-        <!--{{category.title}}-->
-      <!--</ion-item>-->
-    <!--</ion-list>-->
-  <!--</ion-content>-->
-<!--</ion-view>-->
 <ion-view view-title="Inventory" data-ng-controller="InventoryCtrl as vm">
   <ion-content>
     <ion-list>
-      <ion-item ng-repeat="category in vm.categories" data-ui-sref="app.single({categoryId:id})" >
-        <!--<ion-item ng-repeat="category in vm.categories" href="#/app/category/{{category.id}}">-->
-        <!--ui-sref="app.todos.detail({todo: $index})">-->
+      <ion-item ng-repeat="category in vm.categories" data-ui-sref="app.single({categoryId:category.id})" >
         {{category.title}}
       </ion-item>
     </ion-list>
   </ion-content>
 </ion-view>
-<!--data-ui-sref="articles.view({articleId: article._id})"-->
+

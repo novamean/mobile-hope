@@ -41,12 +41,12 @@ angular.module('mobilehope.controllers', [])
   };
 })
 
-    .controller('InventoryCtrl',['$scope','$state','inventoryDataService', function($scope,state,inventoryDataService) {
+    .controller('InventoryCtrl',['$scope','$state','$stateParams','inventoryDataService',
+      function($scope,$state,$stateParams,inventoryDataService) {
       var vm = this;
       vm.categories=inventoryDataService.getData();
-      console.log(vm.categories);
-
     }])
+
     .service('inventoryDataService', [ function () {
       this.getData = function () {
         return (
@@ -58,17 +58,23 @@ angular.module('mobilehope.controllers', [])
       };
       this.getCategoryData = function () {
         return ( [
-          {categoryId: 1, item: 'Shirt', size: 'XL'},
-          {categoryId: 1, item: 'Slacks', size: 'M'},
-          {categoryId: 1, item: 'Hoodie', size: 'S'},
-          {categoryId: 1, item: 'Sweater', size: 'M'},
-          {categoryId: 2, item: 'Tomato Sauce', size: '8 ozs.'}
+          {itemId: 1, item: 'Shirt', size: 'XL'},
+          {itemId: 1, item: 'Slacks', size: 'M'},
+          {itemId: 1, item: 'Hoodie', size: 'S'},
+          {itemId: 1, item: 'Sweater', size: 'M'},
+          {itemId: 2, item: 'Tomato Sauce', size: '8 ozs.'}
         ])
+      };
+      this.getCategoryName = function (id){
+          var name = this.getData()[id-1].title;
+       return(name);
       };
 
     }])
-    .controller('CategoryCtrl',['$scope','$state','inventoryDataService', function($scope,state,inventoryDataService) {
+    .controller('CategoryCtrl',['$scope','$state','$stateParams','inventoryDataService',
+      function($scope,$state,$stateParams,inventoryDataService) {
       var vm = this;
+      vm.categoryId = $stateParams.categoryId;
       vm.items=inventoryDataService.getCategoryData();
-      console.log(vm.items);
+      vm.categoryName = inventoryDataService.getCategoryName(vm.categoryId);
     }]);
