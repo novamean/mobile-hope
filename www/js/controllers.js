@@ -44,37 +44,45 @@ angular.module('mobilehope.controllers', [])
     .controller('InventoryCtrl',['$scope','$state','$stateParams','inventoryDataService',
       function($scope,$state,$stateParams,inventoryDataService) {
       var vm = this;
-      vm.categories=inventoryDataService.getData();
+      vm.categories=inventoryDataService.getCategoryData();
     }])
 
-    .service('inventoryDataService', [ function () {
-      this.getData = function () {
-        return (
-            [
-              {title: 'Clothing', id: 1},
-              {title: 'Food', id: 2},
-              {title: 'School Supplies', id: 3}
-            ])
+    .factory('inventoryDataService', [ function () {
+      function getCategoryData (){
+          var categories =  ([
+                      {title: 'Clothing', id: 1},
+                      {title: 'Food', id: 2},
+                      {title: 'School Supplies', id: 3}
+                             ]);
+          return categories;
       };
-      this.getCategoryData = function () {
-        return ( [
-          {itemId: 1, item: 'Shirt', size: 'XL'},
-          {itemId: 1, item: 'Slacks', size: 'M'},
-          {itemId: 1, item: 'Hoodie', size: 'S'},
-          {itemId: 1, item: 'Sweater', size: 'M'},
-          {itemId: 2, item: 'Tomato Sauce', size: '8 ozs.'}
-        ])
+      function getItemData (id){
+          var allItems = ( [
+              {itemId: 1, item: 'Shirt', size: 'XL'},
+              {itemId: 1, item: 'Slacks', size: 'M'},
+              {itemId: 1, item: 'Hoodie', size: 'S'},
+              {itemId: 1, item: 'Sweater', size: 'M'},
+              {itemId: 2, item: 'Tomato Sauce', size: '8 ozs.'}
+          ]);
+          function filterByID(allItems) {
+              if ('itemId' in allItems  === id) {
+                  return true;
+              } else {
+                  return false;
+              }
+          };
+          var items =allItems.filter(filterByID);
+          console.log(id,items);
+        return items;
       };
-      this.getCategoryName = function (id){
-          var name = this.getData()[id-1].title;
-       return(name);
-      };
-
-    }])
+      function getCategoryName(id) {
+          var name = this.getCategoryData()[id-1].title;
+          return name;
+      }}])
     .controller('CategoryCtrl',['$scope','$state','$stateParams','inventoryDataService',
       function($scope,$state,$stateParams,inventoryDataService) {
       var vm = this;
       vm.categoryId = $stateParams.categoryId;
-      vm.items=inventoryDataService.getCategoryData();
+      vm.items=inventoryDataService.getItemData();
       vm.categoryName = inventoryDataService.getCategoryName(vm.categoryId);
-    }]);
+    }])
