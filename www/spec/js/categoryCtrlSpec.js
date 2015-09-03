@@ -23,24 +23,24 @@ describe("CategoryCtrl", function() {
     }));
 
     // tests start here
-    it("contains spec with an expectation", function () {
-        expect(true).toBe(true);
-    });
+//    it("contains spec with an expectation", function () {
+//        expect(true).toBe(true);
+//    });
     it("should have a scope variable defined", inject['inventoryDataService', function (inventoryDataService) {
         expect(scope).toBeDefined();
     }]);
-
-    it("should have a categories array", inject['inventoryDataService', function (inventoryDataService) {
-        expect(scope.categories.length).toBeDefined();
-    }]);
-
-    xit('should have categories array with three .title and ;id items', inject['inventoryDataService', function (inventoryDataService) {
-        expect(inventoryDataService.getData()).toEqual([
-            {title: 'Clothing', id: 1},
-            {title: 'Food', id: 2},
-            {title: 'School Supplies', id: 3}
-        ])
-    }]);
+//
+//    it("should have a categories array", inject['inventoryDataService', function (inventoryDataService) {
+//        expect(scope.categories.length).toBeDefined();
+//    }]);
+//
+//    it('should have categories array with three .title and ;id items', inject['inventoryDataService', function (inventoryDataService) {
+//        expect(inventoryDataService.getCategoryData()).toEqual([
+//            {title: 'Clothing', id: 1},
+//            {title: 'Food', id: 2},
+//            {title: 'School Supplies', id: 3}
+//        ])
+//    }]);
 });
 
     //xit('should have items ready to load', function() {

@@ -86,7 +86,7 @@ describe("Unit tests for InventoryCtrl", function() {
             httpBackend.expectGET('api/inventory').respond(sampleCategories);
 
             // Run controller functionality
-            scope.categories = inventoryDataService.getData();
+            scope.categories = inventoryDataService.getCategoryData();
             httpBackend.flush();
 
             // Test scope value
