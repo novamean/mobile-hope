@@ -1,4 +1,4 @@
-describe("Unit tests for InventoryCtrl", function() {
+describe("Unit tests for InventoryCtrl with inline mock", function() {
 
     var scope, controller;
     beforeEach(module('mobilehope'));
@@ -23,9 +23,24 @@ describe("Unit tests for InventoryCtrl", function() {
             httpBackend: $httpBackend
 
         });
+        var mockService;
+        beforeEach(module(function($provide){
+            mockService = {
+                list: function(){
+                    return [{title: 'Clothing', id: 1}]
+                }
+            };
+            $provide.value('inventoryDataService', mockService);
+        }))
     }));
-
+    beforeEach(inject(function($controller) {
+        controller = $controller('inventoryController');
+    }));
     // tests start here
+
+    it('should load mocked out items', function(){
+        expect(controller.categories).toEqual([{title: 'Clothing', id: 1}])
+    })
 
    it("should have a scope variable defined", function() {
         expect(scope).toBeDefined();
