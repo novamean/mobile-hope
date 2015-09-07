@@ -41,13 +41,13 @@ angular.module('mobilehope.controllers', [])
         };
     })
 
-    .controller('InventoryCtrl', ['$scope', '$state', '$stateParams', 'inventoryDataService',
-        function ($scope, $state, $stateParams, inventoryDataService) {
+    .controller('InventoryCtrl', ['$scope', '$state', '$stateParams', 'mobileHopeDataService',
+        function ($scope, $state, $stateParams, mobileHopeDataService) {
             var vm = this;
-            vm.categories = inventoryDataService.getCategoryData();
+            vm.categories = mobileHopeDataService.getCategoryData();
         }])
 
-    .factory('inventoryDataService', [function () {
+    .factory('mobileHopeDataService', [function () {
         var factory = {};
         factory.getCategoryData = function () {
             var categories = ([
@@ -68,15 +68,14 @@ angular.module('mobilehope.controllers', [])
             ]);
             function filterByID(allItems) {
                 if (allItems.itemId == id) {
-                    console.log(id,'true');
+                    //console.log(id,'true');
                     return true;
                 } else {
-                    console.log(id,'false');
+                    //console.log(id,'false');
                     return false;
                 }
             };
             var items = allItems.filter(filterByID);
-            console.log(id, items, allItems);
             return items;
         };
         factory.getCategoryName = function (id) {
@@ -85,10 +84,11 @@ angular.module('mobilehope.controllers', [])
         };
         return factory
     }])
-    .controller('CategoryCtrl', ['$scope', '$state', '$stateParams', 'inventoryDataService',
-        function ($scope, $state, $stateParams, inventoryDataService) {
+
+    .controller('CategoryCtrl', ['$scope', '$state', '$stateParams', 'mobileHopeDataService',
+        function ($scope, $state, $stateParams, mobileHopeDataService) {
             var vm = this;
             vm.categoryId = $stateParams.categoryId;
-            vm.items = inventoryDataService.getItemData(vm.categoryId);
-            vm.categoryName = inventoryDataService.getCategoryName(vm.categoryId);
+            vm.items = mobileHopeDataService.getItemData(vm.categoryId);
+            vm.categoryName = mobileHopeDataService.getCategoryName(vm.categoryId);
         }]);
