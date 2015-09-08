@@ -41,13 +41,13 @@ angular.module('mobilehope.controllers', [])
   };
 })
 
-    .controller('InventoryCtrl',['$scope','$state','$stateParams','inventoryDataService',
-      function($scope,$state,$stateParams,inventoryDataService) {
+    .controller('InventoryCtrl',['$scope','$state','$stateParams','mobileHopeDataService',
+      function($scope,$state,$stateParams,mobileHopeDataService) {
       var vm = this;
-      vm.categories=inventoryDataService.getData();
+      vm.categories=mobileHopeDataService.getData();
     }])
 
-    .service('inventoryDataService', [ function () {
+    .service('mobileHopeDataService', [ function () {
       this.getData = function () {
         return (
             [
@@ -71,10 +71,10 @@ angular.module('mobilehope.controllers', [])
       };
 
     }])
-    .controller('CategoryCtrl',['$scope','$state','$stateParams','inventoryDataService',
-      function($scope,$state,$stateParams,inventoryDataService) {
+    .controller('CategoryCtrl',['$scope','$state','$stateParams','mobileHopeDataService',
+      function($scope,$state,$stateParams,mobileHopeDataService) {
       var vm = this;
       vm.categoryId = $stateParams.categoryId;
-      vm.items=inventoryDataService.getCategoryData();
-      vm.categoryName = inventoryDataService.getCategoryName(vm.categoryId);
+      vm.items=mobileHopeDataService.getCategoryData();
+      vm.categoryName = mobileHopeDataService.getCategoryName(vm.categoryId);
     }]);
