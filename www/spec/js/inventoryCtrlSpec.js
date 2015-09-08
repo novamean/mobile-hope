@@ -1,16 +1,15 @@
-describe("Unit tests for InventoryCtrl", function() {
+describe("Unit tests for InventoryCtrl", function () {
 
     var scope, controller;
     beforeEach(module('mobilehope'));
 
-    beforeEach(inject(function (
-        $rootScope,
-        $controller,
-        $ionicModal,
-        $ionicPopup,
-        $stateParams,
-        $timeout,
-        $state) {
+    beforeEach(inject(function ($rootScope,
+                                $controller,
+                                $ionicModal,
+                                $ionicPopup,
+                                $stateParams,
+                                $timeout,
+                                $state) {
 
         scope = $rootScope.$new();
 
@@ -19,15 +18,14 @@ describe("Unit tests for InventoryCtrl", function() {
             $ionicModal: $ionicModal,
             $ionicPopup: $ionicPopup,
             $state: $state
-
         });
     }));
 
-    it("should have a scope variable defined", function() {
+    it("should have a scope variable defined", function () {
         expect(scope).toBeDefined();
     });
 //TODO scope.categories is not defined??
-    xit("should have a accounts array", function(){
+    xit("should have a accounts array", function () {
         expect(scope.categories.length).toBe(3);
     });
 });
