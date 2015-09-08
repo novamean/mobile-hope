@@ -1,7 +1,7 @@
 /**
  * Created by CliffEby on 9/5/2015.
  */
-describe('mobilehope DataService - Factory', function() {
+describe('mobilehope DataService - Factory', function () {
     var mobileHopeDataService;
     beforeEach(module('mobilehope'));
     beforeEach(inject(function (_mobileHopeDataService_) {
@@ -13,13 +13,13 @@ describe('mobilehope DataService - Factory', function() {
     it('can get the length of the mock Category array', inject(function (mobileHopeDataService) {
         expect(mobileHopeDataService.getCategoryData().length).toEqual(3)
     }));
-    it('mock has a item type Shirt with itemId of 1 at array position 0', inject(function(mobileHopeDataService){
+    it('mock has a item type Shirt with itemId of 1 at array position 0', inject(function (mobileHopeDataService) {
         var oneItem = {
             itemId: 1, item: 'Shirt', size: 'XL'
         };
         expect(mobileHopeDataService.getItemData(1)[0].item).toEqual(oneItem.item);
     }));
-    it('mock can get a Category Name', inject(function(mobileHopeDataService){
+    it('mock can get a Category Name', inject(function (mobileHopeDataService) {
         var oneCategory = {
             title: 'Clothing', id: 1
         };
@@ -29,17 +29,17 @@ describe('mobilehope DataService - Factory', function() {
 });
 
 //TO DO SERVICE IS NOT FOUND??
-xdescribe('mobilehope DataService Factory with Jasmine Spies', function() {
+xdescribe('mobilehope DataService Factory with Jasmine Spies', function () {
     beforeEach(module('mobilehope'));
     var mobileHopeDataService;
     var ctrl;
-    beforeEach(inject(function ($controller,_mobileHopeDataService_) {
-        spyOn(_mobileHopeDataService_,'getCategoryData').and.callThrough();
+    beforeEach(inject(function ($controller, _mobileHopeDataService_) {
+        spyOn(_mobileHopeDataService_, 'getCategoryData').and.callThrough();
         mobileHopeDataService = _mobileHopeDataService_;
         ctrl = $controller('InventoryCtrl');
         console.info(ctrl);
     }));
-    it('can get the mobileHopeDataService Factory',(function () {
+    it('can get the mobileHopeDataService Factory', (function () {
         expect(mobileHopeDataService.getCategoryData).toHaveBeenCalled();
         expect(mobileHopeDataService.getCategoryData.callCount).toEqual(1);
         expect(ctrl.categories).toEqual([

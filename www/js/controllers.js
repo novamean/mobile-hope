@@ -66,6 +66,7 @@ angular.module('mobilehope.controllers', [])
                 {itemId: 1, item: 'Sweater', size: 'M'},
                 {itemId: 2, item: 'Tomato Sauce', size: '8 ozs.'}
             ]);
+
             function filterByID(allItems) {
                 if (allItems.itemId == id) {
                     //console.log(id,'true');
