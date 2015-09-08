@@ -6,6 +6,18 @@ Mobile Hope
 
 Mobile Hope is an mobile app to manage the operations of Mobile Hope in Leesburg, VA.  [The Mobile Hope program](http://www.mobilehopeloudoun.org/) is designed to support the needs of precariously housed, homeless and at risk youth living in Loudon County. 
 
+Issue 15  Story List of Clothing Items
+--------------------------------------
+One of two pull requests - USES A DATASERVICE (Service) and a Angular Filter.
+(The other USES A DATASERVICE (Factory) and a JS filter Method)
+
+ionic serve to run
+
+karma/jasmine test included.  Some are failing and have been skipped.
+Would like feedback on why data is undefined.
+
+
+
 Table of contents
 -----------------
   
