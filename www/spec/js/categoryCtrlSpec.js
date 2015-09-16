@@ -10,7 +10,7 @@ describe("CategoryCtrl", function () {
 
     // tests start here
     //TODO  Scope is not defined
-    xit('should have scope', function () {
+    it('should have scope', function () {
         expect(scope).toBeDefined();
     });
 });

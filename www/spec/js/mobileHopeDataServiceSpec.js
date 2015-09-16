@@ -34,15 +34,18 @@ describe('mobilehope DataService Factory with Jasmine Spies', function () {
     beforeEach(module('mobilehope.controllers'));
     var mobileHopeDataService;
     var ctrl;
-    beforeEach(inject(function ($controller, _mobileHopeDataService_) {
+    beforeEach(inject(function ($controller, _mobileHopeDataService_, $rootScope) {
         spyOn(_mobileHopeDataService_, 'getCategoryData').and.callThrough();
         mobileHopeDataService = _mobileHopeDataService_;
-        ctrl = $controller('InventoryCtrl');
+        scope = $rootScope.$new();
+        ctrl = $controller('InventoryCtrl',{
+            $scope: scope
+        });
 
     }));
     it('can get the mobileHopeDataService Factory', (function () {
         expect(mobileHopeDataService.getCategoryData).toHaveBeenCalled();
-        expect(mobileHopeDataService.getCategoryData.callCount).toEqual(1);
+        expect(mobileHopeDataService.getCategoryData.calls.count()).toEqual(1);
         expect(ctrl.categories).toEqual([
             {title: 'Clothing', id: 1},
             {title: 'Food', id: 2},

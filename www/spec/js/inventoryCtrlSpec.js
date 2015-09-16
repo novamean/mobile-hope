@@ -15,9 +15,9 @@ describe("Unit tests for InventoryCtrl", function () {
 
         controller = $controller('InventoryCtrl', {
             $scope: scope,
-            $ionicModal: $ionicModal,
-            $ionicPopup: $ionicPopup,
-            $state: $state
+        //    $ionicModal: $ionicModal,
+        //    $ionicPopup: $ionicPopup,
+        //    $state: $state
         });
     }));
 
