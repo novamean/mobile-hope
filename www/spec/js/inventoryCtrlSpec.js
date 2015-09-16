@@ -2,6 +2,7 @@ describe("Unit tests for InventoryCtrl", function () {
 
     var scope, controller;
     beforeEach(module('mobilehope'));
+    beforeEach(module('mobilehope.controllers'));
 
     beforeEach(inject(function ($rootScope,
                                 $controller,

@@ -1,5 +1,6 @@
 describe("CategoryCtrl", function () {
     // load the controller's module
+    beforeEach(module('mobilehope'));
     beforeEach(module('mobilehope.controllers'));
     var scope;
     beforeEach(inject(function ($rootScope, $controller) {
