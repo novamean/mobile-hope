@@ -19,7 +19,8 @@ module.exports = function (config) {
             'www/lib/ionic/js/ionic.bundle.js',
             'www/lib/ionic/js/ionic-angular.js',
             'www/js/app.js',
-            'www/js/controllers.js',
+            'www/js/controllers/*.js',
+            'www/js/services/*.js',
             'www/js/*.js',
             'www/spec/js/*.js'
         ],
@@ -28,7 +29,8 @@ module.exports = function (config) {
         // list of files to exclude
         exclude: [
 
-            'karma.conf.js'
+            'karma.conf.js',
+            'www/spec/js/categoryCtrlSpec.js'
 
         ],
 

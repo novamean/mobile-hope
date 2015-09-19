@@ -5,12 +5,13 @@ describe("CategoryCtrl", function () {
     var scope;
     beforeEach(inject(function ($rootScope, $controller) {
         scope = $rootScope.$new();
-        $controller('CategoryCtrl', {$scope: scope});
-    }));
+        controller = $controller('CategoryCtrl', {
+            $scope: scope
+    })}));
 
     // tests start here
     //TODO  Scope is not defined
     it('should have scope', function () {
-        expect(scope).toBeDefined();
+        expect(controller.categoryName).toBeDefined();
     });
 });

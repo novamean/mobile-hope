@@ -4,22 +4,10 @@ describe("Unit tests for InventoryCtrl", function () {
     beforeEach(module('mobilehope'));
     beforeEach(module('mobilehope.controllers'));
 
-    beforeEach(inject(function ($rootScope,
-                                $controller,
-                                _mobileHopeDataService_,
-                                $ionicModal,
-                                $ionicPopup,
-                                $stateParams,
-                                $timeout,
-                                $state) {
+    beforeEach(inject(function ($rootScope, $controller) {
         scope = $rootScope.$new();
-
         controller = $controller('InventoryCtrl', {
             $scope: scope
-
-        //    $ionicModal: $ionicModal,
-        //    $ionicPopup: $ionicPopup,
-        //    $state: $state
         });
     }));
 
