@@ -2,13 +2,22 @@ angular.module('mobilehope.controllers')
 .factory('mobileHopeDataService', [function () {
     var factory = {};
     factory.getCategoryData = function () {
-        var categories = ([
-            {title: 'Clothing', id: 1},
-            {title: 'Food', id: 2},
-            {title: 'School Supplies', id: 3}
-        ]);
-        return categories;
-    };
+        //factory.getCategoryData = function () {
+        //    var categories = ([
+        //        {title: 'Clothing', id: 1},
+        //        {title: 'Food', id: 2},
+        //        {title: 'School Supplies', id: 3}
+        //    ]);
+        //    return categories;
+        //};
+        factory.getCategoryData = function($http, SERVER) {
+            return $http({
+                method: 'GET',
+                url: SERVER.url + '/categories'
+            }).success(function(data){
+                console.log('Success: ',data);
+            });
+        };
     factory.getItemData = function (id) {
         var id = id;
         var allItems = ( [

@@ -76,4 +76,12 @@ angular.module('mobilehope', ['ionic', 'mobilehope.controllers'])
             });
         // if none of the above states are matched, use this as the fallback
         $urlRouterProvider.otherwise('app/search');
+    //})
+    //
+    //.constant('SERVER', {
+    //    // Local server
+    //    url: 'http://localhost:3000'
+    //
+    //    // Public Heroku server
+    //    // url: 'https://ionic-songhop.herokuapp.com'
     });
