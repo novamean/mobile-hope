@@ -1,5 +1,5 @@
 angular.module('mobilehope.controllers')
-.factory('mobileHopeDataService', ['$http',function ($http) {
+.factory('mobileHopeDataService', ['$http','SERVER',function ($http,SERVER) {
     var factory = {};
 
         //factory.getCategoryData = function () {
@@ -10,10 +10,10 @@ angular.module('mobilehope.controllers')
         //    ]);
         //    return categories;
         //};
-        factory.getCategoryData = function($http, SERVER) {
+        factory.getCategoryData = function() {
             return $http({
                 method: 'GET',
-                url: 'http://localhost:3000' + '/categories'
+                url: SERVER.url + '/categories'
             }).success(function(data){
                 console.log('Success: ',data);
             });
@@ -41,8 +41,8 @@ angular.module('mobilehope.controllers')
         return items;
     };
     factory.getCategoryName = function (id) {
-        var name = this.getCategoryData()[id - 1].title;
-        return name;
+        //var name = this.getCategoryData()[id - 1].title;
+        //return name;
     };
     return factory
 }]);
