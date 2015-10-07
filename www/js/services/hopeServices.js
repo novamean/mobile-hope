@@ -1,7 +1,7 @@
 angular.module('mobilehope.controllers')
-.factory('mobileHopeDataService', [function () {
+.factory('mobileHopeDataService', ['$http',function ($http) {
     var factory = {};
-    factory.getCategoryData = function () {
+
         //factory.getCategoryData = function () {
         //    var categories = ([
         //        {title: 'Clothing', id: 1},
@@ -13,7 +13,7 @@ angular.module('mobilehope.controllers')
         factory.getCategoryData = function($http, SERVER) {
             return $http({
                 method: 'GET',
-                url: SERVER.url + '/categories'
+                url: 'http://localhost:3000' + '/categories'
             }).success(function(data){
                 console.log('Success: ',data);
             });
