@@ -80,8 +80,8 @@ angular.module('mobilehope', ['ionic', 'mobilehope.controllers'])
     //
     .constant('SERVER', {
         // Local server
-        url: 'http://localhost:3000'
+       // url: 'http://localhost:3000'
 
     //    // Public Heroku server
-    //    // url: 'https://ionic-songhop.herokuapp.com'
+         url: 'https://api.mongolab.com/api/1/databases/mobile-hope1/collections/categories?apiKey=nxJT5bkrsf8ORH1Bl7bmldqa8Ckb0UUm'
     });

@@ -13,7 +13,7 @@ angular.module('mobilehope.controllers')
         factory.getCategoryData = function() {
             return $http({
                 method: 'GET',
-                url: SERVER.url + '/categories'
+                url: SERVER.url + ''
             }).success(function(data){
                 console.log('Success: ',data);
             });
