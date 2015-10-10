@@ -83,5 +83,7 @@ angular.module('mobilehope', ['ionic', 'mobilehope.controllers'])
        // url: 'http://localhost:3000'
 
     //    // Public Heroku server
-         url: 'https://api.mongolab.com/api/1/databases/mobile-hope1/collections/categories?apiKey=nxJT5bkrsf8ORH1Bl7bmldqa8Ckb0UUm'
+         url: 'https://api.mongolab.com/api/1/databases/mobile-hope/collections',
+         apiKey: '?apiKey=nxJT5bkrsf8ORH1Bl7bmldqa8Ckb0UUm'
     });
+

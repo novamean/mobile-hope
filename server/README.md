@@ -115,6 +115,28 @@ server
 * **`README.md`** - This is the current document, responsible for providing
     some basic application documentation and quick-start instructions.
 
+
+
+DataStructure
+------------
+To create categorries db in Mongo Shell
+
+> db.categories.save([{title: 'Clothing', itemId: 1},
+            {title: 'Food', itemId: 2},
+            {title: 'School Supplies', itemId: 3}])
+            
+To create allItems db in Mongo Shell
+
+> db.allItems.save( [
+                           {itemId: 1, item: 'Shirt', size: 'XL'},
+                           {itemId: 1, item: 'Slacks', size: 'M'},
+                           {itemId: 1, item: 'Hoodie', size: 'S'},
+                           {itemId: 1, item: 'Sweater', size: 'M'},
+                           {itemId: 2, item: 'Tomato Sauce', size: '8 ozs.'}
+                  ])
+
+
+
 Contributing
 ------------
 

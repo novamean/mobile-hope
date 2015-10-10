@@ -6,6 +6,10 @@ angular.module('mobilehope')
         function ($scope, $state, $stateParams, mobileHopeDataService) {
             var vm = this;
             vm.categoryId = $stateParams.categoryId;
-            vm.items = mobileHopeDataService.getItemData(vm.categoryId);
+            console.log('catId',vm.categoryId);
+            vm.items = mobileHopeDataService.getItemData(vm.categoryId)
+                .then(function (items) {
+                    vm.items = items.data;
+
             vm.categoryName = mobileHopeDataService.getCategoryName(vm.categoryId);
-        }]);
+        })}]);

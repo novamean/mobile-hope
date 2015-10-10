@@ -1,4 +1,4 @@
-<ion-view view-title="Inventory" data-ng-controller="InventoryCtrl as vm">
+<ion-view view-title="Inventory" data-ng-controller="InventoryCtrl as vm" data-ng-init="getCategories()" >
   <ion-content>
     <ion-list>
       <ion-item ng-repeat="category in vm.categories" data-ui-sref="app.single({categoryId:category.id})" >
