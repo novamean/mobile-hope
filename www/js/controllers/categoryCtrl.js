@@ -2,8 +2,8 @@
  * Created by CliffEby on 9/18/2015.
  */
 angular.module('mobilehope')
-    .controller('CategoryCtrl', ['$scope', '$state', '$stateParams', 'mobileHopeDataService',
-        function ($scope, $state, $stateParams, mobileHopeDataService) {
+    .controller('CategoryCtrl', ['$scope',"$http", '$stateParams', 'mobileHopeDataService',
+        function ($scope,$http, $stateParams, mobileHopeDataService) {
             var vm = this;
             vm.categoryId = $stateParams.categoryId;
             console.log('catId',vm.categoryId);

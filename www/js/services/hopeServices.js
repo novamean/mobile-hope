@@ -10,17 +10,7 @@ angular.module('mobilehope.controllers')
         //    ]);
         //    return categories;
         //};
-        //factory.getCategoryData = function() {
-        //    var categories =  $http({
-        //        method: 'GET',
-        //        url: SERVER.url + ''
-        //    }).then(function(response){
-        //        console.log('Success: ',response);
-        //        return{
-        //        categories: response}
-        //    }, function(data){});
-        //    return categories;
-        //};
+
         factory.getCategoryData = function () {
             var categories = [];
             return $http({
