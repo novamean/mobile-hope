@@ -9,16 +9,12 @@ angular.module('mobilehope')
             console.log('catId', vm.categoryId);
             vm.items = mobileHopeDataService.getItemData()
                 .then(function (items) {
-                    //   vm.items = items.data;
-                    var array = [];
-                    angular.forEach(items.data, function (element) {
-                        array.push(element);
-                        vm.items = array;
-                    });
-                });
+                   vm.items = items.data;
+                  });
+
             vm.categories = mobileHopeDataService.getCategoryData()
                 .then(function (cats) {
                     vm.categories = cats.data;
-                    vm.categoryName = vm.categories[vm.categoryId - 1].title;
-                })
+            vm.categoryName = vm.categories[vm.categoryId - 1].title;
+                });
         }]);

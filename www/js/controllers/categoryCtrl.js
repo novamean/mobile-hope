@@ -7,11 +7,7 @@ angular.module('mobilehope')
             var vm = this;
             mobileHopeDataService.getCategoryData()
                 .then(function (cats) {
-                    //vm.categories = cats.data;
-                    var array = [];
-                    angular.forEach(cats.data, function (element) {
-                        array.push(element);
-                        vm.categories = array;
-                    });
+                 vm.categories = cats.data;
+
                 });
         }]);
