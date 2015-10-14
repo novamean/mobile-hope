@@ -7,7 +7,7 @@ angular.module('mobilehope')
             var vm = this;
             vm.categoryId = $stateParams.categoryId;
             console.log('catId', vm.categoryId);
-            vm.items = mobileHopeDataService.getItemData(vm.categoryId)
+            vm.items = mobileHopeDataService.getItemData()
                 .then(function (items) {
                     //   vm.items = items.data;
                     var array = [];

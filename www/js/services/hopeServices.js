@@ -13,9 +13,8 @@ angular.module('mobilehope.controllers')
             })
         };
 
-        factory.getItemData = function (id) {
-            var id = id;
-            var allItems = [];
+        factory.getItemData = function () {
+           var allItems = [];
             return $http({
                 method: 'GET',
                 url: SERVER.url + '/allItems'  + SERVER.apiKey
