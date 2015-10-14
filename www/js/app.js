@@ -52,7 +52,7 @@ angular.module('mobilehope', ['ionic', 'mobilehope.controllers'])
                 views: {
                     'menuContent': {
                         templateUrl: 'templates/inventory.html',
-                        controller: 'InventoryCtrl'
+                        controller: 'CategoryCtrl'
                     }
                 }
             })
@@ -62,7 +62,7 @@ angular.module('mobilehope', ['ionic', 'mobilehope.controllers'])
                 views: {
                     'menuContent': {
                         templateUrl: 'templates/category.html',
-                        controller: 'CategoryCtrl'
+                        controller: 'ItemCtrl'
                     }
                 }
                 //,

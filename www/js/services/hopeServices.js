@@ -1,16 +1,6 @@
 angular.module('mobilehope.controllers')
     .factory('mobileHopeDataService', ['$http', 'SERVER', function ($http, SERVER) {
         var factory = {};
-
-        //factory.getCategoryData = function () {
-        //    var categories = ([
-        //        {title: 'Clothing - hope', id: 1},
-        //        {title: 'Food', id: 2},
-        //        {title: 'School Supplies', id: 3}
-        //    ]);
-        //    return categories;
-        //};
-
         factory.getCategoryData = function () {
             var categories = [];
             return $http({
@@ -32,37 +22,8 @@ angular.module('mobilehope.controllers')
             }).then(function (response) {
                 allItems = response;
                 console.log('Success: ', response, allItems);
-                //    function filterByID(allItems) {
-                //        if (allItems.itemId == id) {
-                //            //console.log(id,'true');
-                //            return true;
-                //        } else {
-                //            //console.log(id,'false');
-                //            return false;
-                //        }
-                //    };
-                //    var items = allItems.filter(filterByID);
-                //    return items;
-                //};
                 return allItems;
             })
-        };
-
-        //    function filterByID(allItems) {
-        //        if (allItems.itemId == id) {
-        //            //console.log(id,'true');
-        //            return true;
-        //        } else {
-        //            //console.log(id,'false');
-        //            return false;
-        //        }
-        //    };
-        //    var items = allItems.filter(filterByID);
-        //    return items;
-        //};
-        factory.getCategoryName = function (id) {
-            var name = this.getCategoryData()[id - 1].title;
-            return name;
         };
         return factory
     }]);

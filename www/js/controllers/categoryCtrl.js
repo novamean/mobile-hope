@@ -2,14 +2,16 @@
  * Created by CliffEby on 9/18/2015.
  */
 angular.module('mobilehope')
-    .controller('CategoryCtrl', ['$scope',"$http", '$stateParams', 'mobileHopeDataService',
-        function ($scope,$http, $stateParams, mobileHopeDataService) {
+    .controller('CategoryCtrl', ['$scope', '$state', '$stateParams', 'mobileHopeDataService',
+        function ($scope, $state, $stateParams, mobileHopeDataService) {
             var vm = this;
-            vm.categoryId = $stateParams.categoryId;
-            console.log('catId',vm.categoryId);
-            vm.items = mobileHopeDataService.getItemData(vm.categoryId)
-                .then(function (items) {
-                    vm.items = items.data;
-
-            vm.categoryName = mobileHopeDataService.getCategoryName(vm.categoryId);
-        })}]);
+            mobileHopeDataService.getCategoryData()
+                .then(function (cats) {
+                    //vm.categories = cats.data;
+                    var array = [];
+                    angular.forEach(cats.data, function (element) {
+                        array.push(element);
+                        vm.categories = array;
+                    });
+                });
+        }]);
