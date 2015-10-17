@@ -5,7 +5,8 @@ angular.module('mobilehope.controllers')
             var categories = [];
             return $http({
                 method: 'GET',
-                url: SERVER.url + '/categories' + SERVER.apiKey
+              //  url: SERVER.url + '/categories' + SERVER.apiKey
+                url: SERVER.url + '/categories'+ SERVER.apiKey
             }).then(function (response) {
                 categories = response;
                 console.log('Success: ', response, categories);
@@ -17,7 +18,7 @@ angular.module('mobilehope.controllers')
            var allItems = [];
             return $http({
                 method: 'GET',
-                url: SERVER.url + '/allItems'  + SERVER.apiKey
+                url: SERVER.url + '/allItems'+ SERVER.apiKey
             }).then(function (response) {
                 allItems = response;
                 console.log('Success: ', response, allItems);
