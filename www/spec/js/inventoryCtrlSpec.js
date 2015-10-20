@@ -1,32 +1,25 @@
-describe("Unit tests for InventoryCtrl", function () {
+(function () {
+    'use strict';
 
-    var scope, controller;
-    beforeEach(module('mobilehope'));
+    describe("The InventoryCtrl", function () {
+        var scope, controller;
+        beforeEach(module('mobilehope'));
 
-    beforeEach(inject(function ($rootScope,
-                                $controller,
-                                $ionicModal,
-                                $ionicPopup,
-                                $stateParams,
-                                $timeout,
-                                $state) {
+        beforeEach(inject(function ($rootScope, $controller) {
+            scope = $rootScope.$new();
 
-        scope = $rootScope.$new();
+            controller = $controller('InventoryCtrl', {
+                $scope: scope,
+            });
+        }));
 
-        controller = $controller('InventoryCtrl', {
-            $scope: scope,
-            $ionicModal: $ionicModal,
-            $ionicPopup: $ionicPopup,
-            $state: $state
+        it('should have scope', function () {
+            expect(scope).toBeDefined();
         });
-    }));
 
-    it("should have a scope variable defined", function () {
-        expect(scope).toBeDefined();
+        it("should have a list of categories attached to the scope", function () {
+            expect(Array.isArray(scope.categories)).toBe(true);
+        });
     });
-//TODO scope.categories is not defined??
-    xit("should have a accounts array", function () {
-        expect(scope.categories.length).toBe(3);
-    });
-});
+}());
 
