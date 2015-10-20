@@ -2,9 +2,10 @@
 logs
 *.log
 
-node_modules/
 platforms/
 plugins/
+
+# JetBrains
 .idea/
 
 # Runtime data

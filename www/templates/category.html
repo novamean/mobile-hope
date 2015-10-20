@@ -1,8 +1,8 @@
 <ion-view view-title="Inventory Items" data-ng-controller="CategoryCtrl as vm">
     <ion-content>
-        <h1>{{vm.categoryName}} Items</h1>
+        <h1>{{categoryName}} Items</h1>
         <ion-list>
-            <ion-item ng-repeat="item in vm.items | filter:{ itemId:vm.categoryId} ">
+            <ion-item ng-repeat="item in items | filter:{ itemId:categoryId} ">
                 {{item.item}} {{item.size}}
             </ion-item>
         </ion-list>

@@ -43,8 +43,7 @@ angular.module('mobilehope.controllers', [])
 
     .controller('InventoryCtrl', ['$scope', '$state', '$stateParams', 'mobileHopeDataService',
         function ($scope, $state, $stateParams, mobileHopeDataService) {
-            var vm = this;
-            vm.categories = mobileHopeDataService.getData();
+            $scope.categories = mobileHopeDataService.getData();
         }])
 
     .service('mobileHopeDataService', [function () {
@@ -54,7 +53,7 @@ angular.module('mobilehope.controllers', [])
                     {title: 'Clothing', id: 1},
                     {title: 'Food', id: 2},
                     {title: 'School Supplies', id: 3}
-                ])
+                ]);
         };
         this.getCategoryData = function () {
             return ( [
@@ -63,7 +62,7 @@ angular.module('mobilehope.controllers', [])
                 {itemId: 1, item: 'Hoodie', size: 'S'},
                 {itemId: 1, item: 'Sweater', size: 'M'},
                 {itemId: 2, item: 'Tomato Sauce', size: '8 ozs.'}
-            ])
+            ]);
         };
         this.getCategoryName = function (id) {
             var name = this.getData()[id - 1].title;
@@ -72,9 +71,8 @@ angular.module('mobilehope.controllers', [])
     }])
     .controller('CategoryCtrl', ['$scope', '$state', '$stateParams', 'mobileHopeDataService',
         function ($scope, $state, $stateParams, mobileHopeDataService) {
-            var vm = this;
             // Pass categoryId from the inventory template via $stateParams
-            vm.categoryId = $stateParams.categoryId;
-            vm.items = mobileHopeDataService.getCategoryData();
-            vm.categoryName = mobileHopeDataService.getCategoryName(vm.categoryId);
+            $scope.categoryId = $stateParams.categoryId;
+            $scope.items = mobileHopeDataService.getCategoryData();
+            $scope.categoryName = mobileHopeDataService.getCategoryName($scope.categoryId);
         }]);

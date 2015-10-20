@@ -3,5 +3,8 @@
   "private": "false",
   "devDependencies": {
     "ionic": "driftyco/ionic-bower#1.1.0"
+  },
+  "dependencies": {
+    "angular-mocks": "~1.4.7"
   }
 }
