@@ -1,29 +1,40 @@
 angular.module('mobilehope.controllers')
-    .factory('mobileHopeDataService', ['$http', 'SERVER', function ($http, SERVER) {
+    .factory('mobileHopeDataService', ['$http','$q', 'SERVER',  function ($http,$q, SERVER) {
         var factory = {};
         factory.getCategoryData = function () {
-            var categories = [];
-            return $http({
-                method: 'GET',
-              //  url: SERVER.url + '/categories' + SERVER.apiKey
-                url: SERVER.url + '/categories'+ SERVER.apiKey
-            }).then(function (response) {
-                categories = response;
-                console.log('Success: ', response, categories);
-                return categories;
-            })
-        };
+              return $http.get(SERVER.url+'/categories')
+                .then(function(response) {
+                    if (typeof response.data === 'object') {
+                        return response.data;
+                    } else {
+                        // invalid response
+                        return $q.reject(response.data);
+                    }
+
+                }, function(response) {
+                    // something went wrong
+                    return $q.reject(response.data);
+                });
+        }
+
+
 
         factory.getItemData = function () {
-           var allItems = [];
-            return $http({
-                method: 'GET',
-                url: SERVER.url + '/allItems'+ SERVER.apiKey
-            }).then(function (response) {
-                allItems = response;
-                console.log('Success: ', response, allItems);
-                return allItems;
-            })
+            return $http.get(SERVER.url+'/items')
+                .then(function(response) {
+                    if (typeof response.data === 'object') {
+                        console.log(response.data);
+                        return response.data;
+
+                    } else {
+                        // invalid response
+                        return $q.reject(response.data);
+                    }
+
+                }, function(response) {
+                    // something went wrong
+                    return $q.reject(response.data);
+                });
         };
         return factory
     }]);

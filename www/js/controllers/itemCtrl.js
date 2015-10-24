@@ -2,19 +2,19 @@
  * Created by CliffEby on 9/18/2015.
  */
 angular.module('mobilehope')
-    .controller('ItemCtrl', ['$scope', "$http", '$stateParams', 'mobileHopeDataService',
-        function ($scope, $http, $stateParams, mobileHopeDataService) {
+    .controller('ItemCtrl', ['$scope',  '$stateParams', 'mobileHopeDataService',
+        function ($scope, $stateParams, mobileHopeDataService) {
             var vm = this;
+            vm.items = [];
             vm.categoryId = $stateParams.categoryId;
-            console.log('catId', vm.categoryId);
-            vm.items = mobileHopeDataService.getItemData()
-                .then(function (items) {
-                   vm.items = items.data;
+            mobileHopeDataService.getItemData()
+                .then(function (data) {
+                   vm.items = data;
                   });
 
             vm.categories = mobileHopeDataService.getCategoryData()
-                .then(function (cats) {
-                    vm.categories = cats.data;
-            vm.categoryName = vm.categories[vm.categoryId - 1].title;
+                .then(function (data) {
+                    vm.categories = data;
+            vm.categoryName = vm.categories[vm.categoryId - 1].categoryTitle;
                 });
         }]);

@@ -51,7 +51,7 @@ angular.module('mobilehope', ['ionic', 'mobilehope.controllers'])
                 url: '/inventory',
                 views: {
                     'menuContent': {
-                        templateUrl: 'templates/inventory.html',
+                        templateUrl: 'templates/categories.html',
                         controller: 'CategoryCtrl'
                     }
                 }
@@ -61,7 +61,7 @@ angular.module('mobilehope', ['ionic', 'mobilehope.controllers'])
                 url: '/category/:categoryId',
                 views: {
                     'menuContent': {
-                        templateUrl: 'templates/category.html',
+                        templateUrl: 'templates/itemList.html',
                         controller: 'ItemCtrl'
                     }
                 }
@@ -80,11 +80,10 @@ angular.module('mobilehope', ['ionic', 'mobilehope.controllers'])
     //
     .constant('SERVER', {
         // Local server
-        //url: 'http://localhost:3000',
-        //apiKey: ''
-    //    // Public Heroku server
-         url: 'https://api.mongolab.com/api/1/databases/mobile-hope/collections',
-         apiKey: '?apiKey=nxJT5bkrsf8ORH1Bl7bmldqa8Ckb0UUm'
+        url: 'http://localhost:3000'
 
+    //    // Public Heroku server
+    //     url: 'https://api.mongolab.com/api/1/databases/mobile-hope/collections',
+    //     apiKey: '?apiKey=nxJT5bkrsf8ORH1Bl7bmldqa8Ckb0UUm'
     });
 

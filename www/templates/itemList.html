@@ -2,7 +2,7 @@
   <ion-content>
     <h1>{{vm.categoryName}} Items</h1>
     <ion-list>
-        <ion-item ng-repeat="item in vm.items | filter:{ itemId:vm.categoryId} ">
+        <ion-item ng-repeat="item in vm.items | filter:{itemId:vm.categoryId} ">
             {{item.item}} {{item.size}}
         </ion-item>
       </ion-item>
