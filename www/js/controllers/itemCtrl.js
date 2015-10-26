@@ -17,4 +17,9 @@ angular.module('mobilehope')
                     vm.categories = data;
             vm.categoryName = vm.categories[vm.categoryId - 1].categoryTitle;
                 });
+            vm.item = [];
+            mobileHopeDataService.getItem()
+                .then(function (data) {
+                    vm.item = data;
+                });
         }]);
