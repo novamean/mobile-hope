@@ -14,15 +14,11 @@ angular.module('mobilehope')
                    vm.items = data;
                   });
 
-            vm.categories = function(){
+            vm.getCategoryName =
                 mobileHopeDataService.getCategoryData()
                     .then(function (data) {
-                        vm.categories = data;
-                    });
-            };
-            vm.categoryName = function () {
-                vm.categories[vm.categoryId - 1].categoryTitle;
-            };
+                        vm.categoryName = data[vm.categoryId-1].categoryTitle;
+                });
 
             vm.getItem = function() {
                 mobileHopeDataService.getItem()
