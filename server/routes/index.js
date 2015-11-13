@@ -31,7 +31,6 @@ router.get('/api/items', function (req, res, next) {
 router.get('/api/item/:itemId', function (req, res, next) {
   Item.findById(req.params.itemId)
       .exec(function (err, item) {
-        console.log(err, item,req.params.itemID);
     if (err) res.status(400).send(err);
     else {
       res.send(item);
@@ -39,7 +38,7 @@ router.get('/api/item/:itemId', function (req, res, next) {
   });
 });
 
-///* GET single Item */
+///* DELETE single Item */
 router.delete=function (req, res, next) {
   var item = req.item;
   item.remove(function (err) {
@@ -50,5 +49,20 @@ router.delete=function (req, res, next) {
         }
 
 })};
+
+///*POST to add Item
+router.post('api/item/', function(req, res, next){
+  var item = new Item(req.body);
+
+  item.save(function(err) {
+    if (err) {
+      return res.status(400).send(
+        err
+      );
+    } else {
+      res.json(item);
+    }
+  });
+})
 
 module.exports = router;
