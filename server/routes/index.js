@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
-var Category = require('../catModel');
-var Item = require('../itemModel');
+var Category = require('../catModel');  //mongoose models
+var Item = require('../itemModel');     //mongoose models
 
 /* GET home page. */
 router.get('/', function (req, res, next) {
