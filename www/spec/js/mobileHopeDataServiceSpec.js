@@ -15,9 +15,9 @@ describe('mobilehope DataService - Factory', function () {
     }));
     it('mock has a item type Shirt with itemId of 1 at array position 0', inject(function (mobileHopeDataService) {
         var oneItem = {
-            itemId: 1, item: 'Shirt', size: 'XL'
+            itemId: 1, item: 'Shirt', itemSize: 'XL'
         };
-        expect(mobileHopeDataService.getItemData(1)[0].item).toEqual(oneItem.item);
+        expect(mobileHopeDataService.getItemData()[0].item).toEqual(oneItem.item);
     }));
     it('mock can get a Category Name', inject(function (mobileHopeDataService) {
         var oneCategory = {

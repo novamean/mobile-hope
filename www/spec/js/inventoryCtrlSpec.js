@@ -1,4 +1,4 @@
-describe("Unit tests for InventoryCtrl", function () {
+describe("Unit tests for ItemCtrl", function () {
 
     var scope, controller;
     beforeEach(module('mobilehope'));
@@ -6,7 +6,7 @@ describe("Unit tests for InventoryCtrl", function () {
 
     beforeEach(inject(function ($rootScope, $controller) {
         scope = $rootScope.$new();
-        controller = $controller('InventoryCtrl', {
+        controller = $controller('ItemCtrl', {
             $scope: scope
         });
     }));
@@ -14,11 +14,11 @@ describe("Unit tests for InventoryCtrl", function () {
     it("should have a scope variable defined", function () {
         expect(scope).toBeDefined();
     });
-    it("should have a scope.categories variable defined", function () {
-        expect(controller.categories).toBeDefined();
+    it("should have a scope.items variable defined", function () {
+        expect(controller.items).toBeDefined();
     });
-    it("should have a accounts array", function () {
-        expect(controller.categories.length).toBe(3);
+    it("should have a item array", function () {
+        expect(controller.items.length).toBe(9);
     });
 });
 

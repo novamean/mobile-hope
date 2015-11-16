@@ -13,11 +13,9 @@ module.exports = function (config) {
 
         // list of files / patterns to load in the browser
         files: [
-            'www/lib/angular/angular.js',
-            'www/lib/angular-mocks/angular-mocks.js',
-            //   'www/lib/angular-ui-router/release/angular-ui-router.min.js',
             'www/lib/ionic/js/ionic.bundle.js',
             'www/lib/ionic/js/ionic-angular.js',
+            'node_modules/angular-mocks/angular-mocks.js',
             'www/js/app.js',
             'www/js/controllers/*.js',
             'www/js/services/*.js',
@@ -30,7 +28,7 @@ module.exports = function (config) {
         exclude: [
 
             'karma.conf.js',
-            'www/spec/js/categoryCtrlSpec.js'
+            'www/spec/js/category1CtrlSpec.js'
 
         ],
 

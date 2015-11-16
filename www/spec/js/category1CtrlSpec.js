@@ -1,4 +1,4 @@
-describe("Unit tests for InventoryCtrl", function () {
+describe("Unit tests for Category1Ctrl", function () {
 
     var scope, controller;
     beforeEach(module('mobilehope'));
@@ -18,10 +18,10 @@ describe("Unit tests for InventoryCtrl", function () {
     }));
 
     it("should have access to dataservice methods", function () {
-        expect(mobileHopeDataService.getCategoryData()[id]).toBeDefined();
+        expect(mobileHopeDataService.getCategoryData()[ctrl.id]).toBeDefined();
        // expect(mobileHopeDataService.getItemData(1)).toBeUndefined();
     });
-    xit("should be able to get Item data", function () {
+    it("should be able to get Item data", function () {
         expect(ctrl.items).toBeUndefined();
         scope.getItemData(1);
         expect(ctrl.items).toBeDefined();
