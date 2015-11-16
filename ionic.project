@@ -1,4 +1,13 @@
 {
   "name": "mobile-hope",
-  "app_id": ""
+  "app_id": "",
+  "gulpStartupTasks": [
+    "sass",
+    "watch",
+    "server:start"
+  ],
+  "watchPatterns": [
+    "www/**/*",
+    "!www/lib/**/*"
+  ]
 }

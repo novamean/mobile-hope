@@ -11,8 +11,18 @@ var paths = {
 
   sass: ['./scss/**/*.scss']
 };
+server = require( 'gulp-develop-server' );
 
-gulp.task('default', ['sass']);
+// run server
+gulp.task( 'server:start', function() {
+    server.listen( { path: './server/bin/www' } );
+});
+
+// restart server if app.js changed
+gulp.task( 'server:restart', function() {
+    gulp.watch( [ './server/bin/www' ], server.restart );
+});
+gulp.task('default', ['sass',]);
 
 gulp.task('sass', function(done) {
   gulp.src('./scss/ionic.app.scss')
