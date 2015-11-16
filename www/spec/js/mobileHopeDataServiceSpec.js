@@ -38,7 +38,7 @@ describe('mobilehope DataService Factory with Jasmine Spies', function () {
         spyOn(_mobileHopeDataService_, 'getCategoryData').and.callThrough();
         mobileHopeDataService = _mobileHopeDataService_;
         scope = $rootScope.$new();
-        ctrl = $controller('InventoryCtrl',{
+        ctrl = $controller('ItemCtrl',{
             $scope: scope
         });
 
