@@ -5,67 +5,7 @@ Mobile Hope Express Server
 
 This directory contains the backend express app for Mobile Hope.
 
-Table of contents
------------------
 
-  * [Getting Started](#getting-started)
-  * [Technologies](#technologies)
-  * [Directory Structure](#directory-structure)
-  * [Contributing](#contributing)
-
-Getting Started
----------------
-
-In order to ensure dependencies are installed, run `npm install` from the root
-folder. To run the server, first start the mongod client by running `mongod`;
-then, run `node server/app.js` to launch the server in your browser.
-
-To run the test suite, run `gulp test` (or `gulp test:server` for mocha tests
-only). To watch your files and run the tests automatically, run `gulp watch:test`.
-
-Technologies
-------------
-
-### Core Technologies
-
-* [Node.js](http://nodejs.org): platform build on the JS runtime
-* [Express.js](http://expressjs.com/): web server framework
-* [MongooseJS](http://mongoosejs.com/): mongo ODM
-
-### Testing
-
-* [Mocha](https://mochajs.org/): javascript bdd testing framework
-* [Should](https://shouldjs.github.io/): expressive assertion library
-* [Supertest](https://github.com/visionmedia/supertest): testing library for node.js HTTP servers
-
-### Supporting Libraries
-
-* [lodash](https://lodash.com/): javascript utility library
-
-Directory Structure
--------------------
-
-Here is the basic organization of our server application:
-
-```
-server
-├── api
-│   └── <endpoint>
-│       ├── index.js
-│       ├── <endpoint>.controller.js
-│       ├── <endpoint>.model.js
-│       └── <endpoint>.spec.js
-├── app.js
-├── config
-│   ├── environment
-│   │   ├── development.js
-│   │   ├── index.js
-│   │   ├── production.js
-│   │   └── test.js
-│   └── express.js
-├── routes.js
-└── README.md
-```
 
 * **`app.js`** - This is the main application file for our server.
 
@@ -115,25 +55,6 @@ server
 * **`README.md`** - This is the current document, responsible for providing
     some basic application documentation and quick-start instructions.
 
-
-
-DataStructure
-------------
-To create categorries db in Mongo Shell
-
-> db.categories.save([{title: 'Clothing', itemId: 1},
-            {title: 'Food', itemId: 2},
-            {title: 'School Supplies', itemId: 3}])
-            
-To create allItems db in Mongo Shell
-
-> db.allItems.save( [
-                           {itemId: 1, item: 'Shirt', size: 'XL'},
-                           {itemId: 1, item: 'Slacks', size: 'M'},
-                           {itemId: 1, item: 'Hoodie', size: 'S'},
-                           {itemId: 1, item: 'Sweater', size: 'M'},
-                           {itemId: 2, item: 'Tomato Sauce', size: '8 ozs.'}
-                  ])
 
 
 

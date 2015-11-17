@@ -96,6 +96,13 @@ Issue 15 - Story - List of Clothing Items
  
  - USES A DATASERVICE (Factory) From my reading, factorties seem preferred.
  - SERVER - MH1Server is an node express server to connect to a MongoLab backend.
+ 
+ To create categorries db in Mongo Shell
+ 
+ > db.categories.save([{categoryTitle: 'Clothing', itemId: 1},
+             {categoryTitle: 'Food', itemId: 2},
+             {categoryTitle: 'School Supplies', itemId: 3}])
+  
     - Data structure is:
         Categories:
         [{"_id":"5608785be4b0830d6c8021c5","itemId":"1","categoryTitle":"Clothing","created":"2015-11-17T02:34:42.471Z"},
