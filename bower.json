@@ -1,10 +1,7 @@
 {
-  "name": "MobileHope",
-  "private": "false",
+  "name": "HelloIonic",
+  "private": "true",
   "devDependencies": {
-    "ionic": "driftyco/ionic-bower#1.1.0"
-  },
-  "dependencies": {
-    "angular-mocks": "~1.4.7"
+    "ionic": "driftyco/ionic-bower#1.1.1"
   }
 }
