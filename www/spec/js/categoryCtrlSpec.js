@@ -12,6 +12,6 @@ describe("CategoryCtrl", function () {
     // tests start here
     //TODO  Scope is not defined
     it('should have scope', function () {
-        expect(controller.categoryName).toBeDefined();
+        expect(controller.categoryTitle).toBeDefined();
     });
 });

@@ -47,9 +47,9 @@ describe('mobilehope DataService Factory with Jasmine Spies', function () {
         expect(mobileHopeDataService.getCategoryData).toHaveBeenCalled();
         expect(mobileHopeDataService.getCategoryData.calls.count()).toEqual(1);
         expect(ctrl.categories).toEqual([
-            {title: 'Clothing', id: 1},
-            {title: 'Food', id: 2},
-            {title: 'School Supplies', id: 3}
+            {categoryTitle: 'Clothing', categoryId: 1},
+            {categoryTitle: 'Food', CategoryId: 2},
+            {categoryTitle: 'School Supplies', categoryId: 3}
         ]);
     }));
 });
