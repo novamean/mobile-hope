@@ -82,6 +82,7 @@ To join the conversation, join our team [Slack channel][novamean-slack].
 [novamean-slack]: http://novamean-slack.herokuapp.com/
 
 A Scrum board for managing the project stories/tasks can be found at the following:
+
 [waffle.io/novamean/mobile-hope]: https://waffle.io/novamean/mobile-hope
 
 ### Guidelines
