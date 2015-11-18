@@ -77,12 +77,10 @@ take a look!
 We manage our issues/planning through GitHub Issues. To come to one of
 the group meetings, check out our [Meetup schedule][novamean].
 To join the conversation, join our team [Slack channel][novamean-slack].
+The project Scrum board for managing the project stories/tasks can be found at our [Waffle.io board][waffle.io/novamean/mobile-hope]
 
 [novamean]:       http://www.meetup.com/NOVA-MEAN/
 [novamean-slack]: http://novamean-slack.herokuapp.com/
-
-A Scrum board for managing the project stories/tasks can be found at the following:
-
 [waffle.io/novamean/mobile-hope]: https://waffle.io/novamean/mobile-hope
 
 ### Guidelines
